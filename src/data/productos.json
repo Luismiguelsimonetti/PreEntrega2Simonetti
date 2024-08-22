@@ -3,7 +3,7 @@
         "id": 1,
         "titulo": "Alfajor Chocolate Negro",
         "imagen": "/assets/alfajores/01.jpg",
-        "detalle":"Aqui va el detalles del producto",
+        "detalle":"Alfajor de chocolate, relleno de dulce de leche y cobertura de chocolate negro.",
         "categoria":"alfajor",
         "precio": 1000
     },
@@ -68,7 +68,7 @@
         "titulo": "Cookie Chocolate Negro",
         "imagen": "/assets/cookies/01.jpg",
         "detalle":"Aqui va el detalles del producto",
-        "categoria":"conito",
+        "categoria":"cookies",
         "precio": 1000
     },
     {
