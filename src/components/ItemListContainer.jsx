@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -52,6 +52,9 @@ export const ItemListContainer = () => {
                             <Card.Title>{producto.titulo}</Card.Title>
                             <Card.Text>{producto.detalle}</Card.Text>
                             <Card.Text>{producto.categoria}</Card.Text>
+                            <Link to={`/item/${producto.id}`}>
+                                <Button variant="primary">Ver más</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 ))}

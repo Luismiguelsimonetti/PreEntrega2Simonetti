@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
                     <div className="d-flex flex-column align-items-center">
                         <Card.Img 
                             variant="top" 
-                            src={producto.imagenId} 
+                            src={producto.imagen} 
                             alt={producto.titulo} 
                             className="img-fluid mb-3" 
                             style={{ 
@@ -46,8 +46,9 @@ export const ItemDetailContainer = () => {
                             }} 
                         />
                         <Card.Title className="text-center">{producto.titulo}</Card.Title>
-                        <Card.Subtitle className="text-muted text-center mb-3">{producto.categoriaId}</Card.Subtitle>
+                        <Card.Subtitle className="text-muted text-center mb-3">{producto.categoria}</Card.Subtitle>
                         <Card.Text className="text-center">{producto.detalle}</Card.Text>
+                        <Card.Text className="text-center"><strong>Precio: ${producto.precio}</strong></Card.Text> {/* Asegúrate de incluir el precio */}
                     </div>
                 </Card.Body>
             </Card>
