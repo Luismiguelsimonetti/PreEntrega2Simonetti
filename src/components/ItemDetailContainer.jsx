@@ -1,15 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
+import { ItemsContext } from "../contexts/ItemsContext";
+import { ItemCount } from "./itemCount";
+
+
 export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
+
+   // const value = useContext(ItemsContext); //
+
+   const onAdd = (count) => alert(count);
 
     useEffect(() => {
         const db = getFirestore();
@@ -45,10 +53,19 @@ export const ItemDetailContainer = () => {
                                 borderRadius: '5px' 
                             }} 
                         />
-                        <Card.Title className="text-center">{producto.titulo}</Card.Title>
-                        <Card.Subtitle className="text-muted text-center mb-3">{producto.categoria}</Card.Subtitle>
-                        <Card.Text className="text-center">{producto.detalle}</Card.Text>
-                        <Card.Text className="text-center"><strong>Precio: ${producto.precio}</strong></Card.Text> {/* Asegúrate de incluir el precio */}
+                        <Card.Title className="text-center">
+                            {producto.titulo}
+                        </Card.Title>
+                        <Card.Subtitle className="text-muted text-center mb-3">
+                            {producto.categoria}
+                        </Card.Subtitle>
+                        <Card.Text className="text-center">
+                            {producto.detalle}
+                        </Card.Text>
+                        <Card.Text className="text-center">
+                            <strong>Precio: ${producto.precio}</strong>
+                            <ItemCount stock= {producto.stock} onAdd={onAdd}/>
+                        </Card.Text> {}
                     </div>
                 </Card.Body>
             </Card>
