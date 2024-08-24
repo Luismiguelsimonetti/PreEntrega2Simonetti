@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { getDocs, where, query, collection } from "firebase/firestore";
 import { db } from "../services/firebase/firebaseConfig";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = (ItemListContainer) => {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();

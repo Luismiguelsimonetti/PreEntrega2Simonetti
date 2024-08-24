@@ -15,9 +15,11 @@ export const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-   // const value = useContext(ItemsContext); //
+   const {addProducto} = useContext(ItemsContext); 
 
-   const onAdd = (count) => alert(count);
+   const onAdd = (count) => {
+    addProducto ({ ...producto, quantity: count })
+};
 
     useEffect(() => {
         const db = getFirestore();
