@@ -6,7 +6,6 @@ import { Provider } from "./contexts/ItemsContext";
 import { Cart } from "./components/cart";
 import Checkout from "./components/checkout";
 import './styles.css';
-import Contacto from "./components/Contacto";
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
           <Route path="/categoria/:id" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/contacto" element={<Contacto/>} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
