@@ -21,12 +21,12 @@ export const ItemCount = ({ stock, onAdd }) => {
     };
 
     return (
-        <>
-            <button onClick={handleDecrease}>-</button>
-            <span style={{ margin: '0 10px', fontSize: '16px', color: 'black' }}>{count}</span>
-            <button onClick={handleIncrease}>+</button>
+        <div className="item-count-container">
+            <button onClick={handleDecrease} className="item-count-button">-</button>
+            <span className="quantity-display">{count}</span>
+            <button onClick={handleIncrease} className="item-count-button">+</button>
             <hr/>
-            <button onClick={handleAdd}>Agregar al carrito</button>
-        </>
+            <button onClick={handleAdd} className="btn-primary">Agregar al carrito</button>
+        </div>
     );
 };

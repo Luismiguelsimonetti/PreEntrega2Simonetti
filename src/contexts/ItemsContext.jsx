@@ -9,31 +9,34 @@ export const Provider = ({ children }) => {
     const alreadyExists = productos.some((i) => i.id === producto.id);
 
     if (alreadyExists) {
-      // Si el producto ya existe, actualizar la cantidad
-      const updatedProducts = productos.map((i) => {
+      const transform = productos.map((i) => {
         if (i.id === producto.id) {
           return { ...i, quantity: i.quantity + producto.quantity };
         } else {
           return i;
         }
       });
-      setProductos(updatedProducts);
+      setProductos(transform);
     } else {
-      // Si el producto no existe, agregarlo al carrito
       setProductos((prev) => [...prev, producto]);
     }
   };
 
   const removeProducto = (id) => {
-    // Filtrar los productos para eliminar el que coincide con el ID
-    const updatedProducts = productos.filter((i) => i.id !== id);
-    setProductos(updatedProducts);
+    const remove = productos.filter((i) => i.id !== id);
+    setProductos(remove);
   };
 
   const reset = () => setProductos([]);
 
+  // Calcula el número total de productos en el carrito
+  const totalQuantity = productos.reduce((total, producto) => total + producto.quantity, 0);
+
+  // Calcula el total acumulado de los productos en el carrito
+  const totalPrice = productos.reduce((total, producto) => total + producto.precio * producto.quantity, 0);
+
   return (
-    <ItemsContext.Provider value={{ addProducto, productos, reset, removeProducto }}>
+    <ItemsContext.Provider value={{ addProducto, productos, reset, removeProducto, totalQuantity, totalPrice }}>
       {children}
     </ItemsContext.Provider>
   );

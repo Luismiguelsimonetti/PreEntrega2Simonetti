@@ -8,18 +8,17 @@ import Card from 'react-bootstrap/Card';
 import { ItemsContext } from "../contexts/ItemsContext";
 import { ItemCount } from "./itemCount";
 
-
 export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
 
-   const {addProducto} = useContext(ItemsContext); 
+    const { addProducto } = useContext(ItemsContext); 
 
-   const onAdd = (count) => {
-    addProducto ({ ...producto, quantity: count })
-};
+    const onAdd = (count) => {
+        addProducto({ ...producto, quantity: count });
+    };
 
     useEffect(() => {
         const db = getFirestore();
@@ -39,35 +38,28 @@ export const ItemDetailContainer = () => {
     return (
         <Container className="mt-4">
             <h1 className="text-center mb-4">Producto</h1>
-            <Card className="mb-4">
+            <Card className="product-card">
                 <Card.Body>
                     <div className="d-flex flex-column align-items-center">
                         <Card.Img 
                             variant="top" 
                             src={producto.imagen} 
                             alt={producto.titulo} 
-                            className="img-fluid mb-3" 
-                            style={{ 
-                                maxWidth: '300px', 
-                                maxHeight: '300px', 
-                                objectFit: 'contain', 
-                                border: '1px solid #ddd', 
-                                borderRadius: '5px' 
-                            }} 
+                            className="card-img img-fluid mb-3" 
                         />
-                        <Card.Title className="text-center">
+                        <Card.Title className="card-title text-center">
                             {producto.titulo}
                         </Card.Title>
-                        <Card.Subtitle className="text-muted text-center mb-3">
+                        <Card.Subtitle className="card-subtitle text-muted text-center mb-3">
                             {producto.categoria}
                         </Card.Subtitle>
-                        <Card.Text className="text-center">
+                        <Card.Text className="card-text text-center">
                             {producto.detalle}
                         </Card.Text>
-                        <Card.Text className="text-center">
-                            <strong>Precio: ${producto.precio}</strong>
-                            <ItemCount stock= {producto.stock} onAdd={onAdd}/>
-                        </Card.Text> {}
+                        <Card.Text className="product-price text-center">
+                            Precio: ${producto.precio}
+                        </Card.Text>
+                        <ItemCount stock={producto.stock} onAdd={onAdd}/>
                     </div>
                 </Card.Body>
             </Card>

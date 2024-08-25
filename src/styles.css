@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Product Card Styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+button, .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Specific Style for the Cart Button */
+.cart-button {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Flexbox container for item count */
+.item-count-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between buttons and count */
+}
+
+/* Button Styling for ItemCount */
+.item-count-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.item-count-button:hover {
+    background-color: #0056b3;
+}
+
+/* Quantity Display */
+.quantity-display {
+    font-size: 1.25rem;
+    color: #000; /* Changed to black for better contrast */
+    margin: 0 10px;
+}
+
+/* Cart Total and Controls */
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #28a745;
+}
+
+.cart-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px 0;
+    }
+
+    .cart-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-controls button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+/* General Card Styling */
+.product-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.product-card .card-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.product-card .card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.product-card .card-img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
