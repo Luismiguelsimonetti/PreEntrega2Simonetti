@@ -14,6 +14,7 @@ return (
           <Nav.Link as={NavLink} to="/categoria/alfajor">Alfajores</Nav.Link>
           <Nav.Link as={NavLink} to="/categoria/conito">Conitos</Nav.Link>
           <Nav.Link as={NavLink} to="/categoria/cookies">Cookies</Nav.Link>
+          <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
         </Nav>
           <CartWidget />
         </Container>
